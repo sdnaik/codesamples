@@ -1,0 +1,76 @@
+#Purpose: 
+#This file specifies how USAA marketing file can be parsed
+#It specifies header, fields name, lengths etc.
+#Create such configuration file for each file type you want parse
+#Author: 
+#Sid Naik
+FileStart=CH10AB
+FieldStart=CH
+FileEnd=CH90AB
+FieldEnd=
+NumOfHeaderLines=1
+NumOfFooterLines=1
+#USAA marketing files doesn't have delimitor
+Delimitor=
+#Field Name,StartPosition,Length
+#Fields=Record Header, PAN, Date Last Changed, Short Name Last, Sort Name First, Card 1 Name, Sponsor Member No, Teen Member No, Date Exp Prev, Street Addr, Street2 Addr, City Name, State, Country, Zip Code 9, Funding Acct 1, Funding Acct Type 1, Funding Acct 2, Funding Acct Type 2, Card Stat, Card Activation Flg, Date Exp, Date Iss Orig, Date Iss Last, No of Reissues, Cnt Dly Con Pin Fail, Cnt Dly con Denial, Date Card 1st Load, Time Neg File Add, Date Neg File Add, Cnt Neg File Adds, Personal Limit Ind, Amt Limit Cash WD, Cnt Limit Cash WD, Amt Limit SV Purchase, Cnt Limit SV Purchase, Home Phone, Dep Allowed, SSN Pri, Bus Phone, Date Birth Pri, Date Addr Chg, Date PIN Chg, Date Card Req, Date Cust Since, Date Last Activation, Card Collection Code, VRU Counter, Activation Method, Prev Card Activ Ind, Amt First Load SV, Type First Load SV, Date Last Load SV, Amt Last Load SV, Type Last Load SV, Balance Available SV, Balance Ledger SV, Last Used Date
+#StartPositions=0, 8, 27, 35, 50, 60, 86, 95, 104, 112, 142, 172, 192, 194, 197, 206, 234, 235, 263, 264, 266, 267, 275, 283, 291, 294, 297, 300, 308, 312, 320, 323, 324, 329, 332, 337, 340, 350, 351, 360, 370, 378, 386, 394, 402, 410, 418, 421, 426, 427, 428, 437, 438, 446, 455, 456, 465, 474
+#EndPositions=8, 27, 35, 50, 60, 86, 95, 104, 112, 142, 172, 192, 194, 197, 206, 234, 235, 263, 264, 266, 267, 275, 283, 291, 294, 297, 300, 308, 312, 320, 323, 324, 329, 332, 337, 340, 350, 351, 360, 370, 378, 386, 394, 402, 410, 418, 421, 426, 427, 428, 437, 438, 446, 455, 456, 465, 474, 482
+Field=Record Header,0,8
+Field=PAN,8,27
+Field=Date Last Changed,27,35
+Field=Short Name Last,35,50
+Field=Sort Name First,50,60
+Field=Card 1 Name,60,86
+Field=Sponsor Member No,86,95
+Field=Teen Member No,95,104
+Field=Date Exp Prev,104,112
+Field=Street Addr,112,142
+Field=Street2 Addr,142,172
+Field=City Name,172,192
+Field=State,192,194
+Field=Country,194,197
+Field=Zip Code 9,197,206
+Field=Funding Acct 1,206,234
+Field=Funding Acct Type 1,234,235
+Field=Funding Acct 2,235,263
+Field=Funding Acct Type 2,263,264
+Field=Card Stat,264,266
+Field=Card Activation Flg,266,267
+Field=Date Exp,267,275
+Field=Date Iss Orig,275,283
+Field=Date Iss Last,283,291
+Field=No of Reissues,291,294
+Field=Cnt Dly Con Pin Fail,294,297
+Field=Cnt Dly con Denial,297,300
+Field=Date Card 1st Load,300,308
+Field=Time Neg File Add,308,312
+Field=Date Neg File Add,312,320
+Field=Cnt Neg File Adds,320,323
+Field=Personal Limit Ind,323,324
+Field=Amt Limit Cash WD,324,329
+Field=Cnt Limit Cash WD,329,332
+Field=Amt Limit SV Purchase,332,337
+Field=Cnt Limit SV Purchase,337,340
+Field=Home Phone,340,350
+Field=Dep Allowed,350,351
+Field=SSN Pri,351,360
+Field=Bus Phone,360,370
+Field=Date Birth Pri,370,378
+Field=Date Addr Chg,378,386
+Field=Date PIN Chg,386,394
+Field=Date Card Req,394,402
+Field=Date Cust Since,402,410
+Field=Date Last Activation,410,418
+Field=Card Collection Code,418,421
+Field=VRU Counter,421,426
+Field=Activation Method,426,427
+Field=Prev Card Activ Ind,427,428
+Field=Amt First Load SV,428,437
+Field=Type First Load SV,437,438
+Field=Date Last Load SV,438,446
+Field=Amt Last Load SV,446,455
+Field=Type Last Load SV,455,456
+Field=Balance Available SV,456,465
+Field=Balance Ledger SV,465,474
+Field=Last Used Date,474,482
