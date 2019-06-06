@@ -1,0 +1,54 @@
+------------------------
+FIND STORED PROC
+------------------------
+
+SELECT *
+FROM dbo.sysobjects (NOLOCK)
+WHERE name LIKE '%digit%' and (xtype in ('P','FN','IF','TF'))
+order by name
+
+------------------------
+FIND TABLE
+------------------------
+
+SELECT *
+FROM dbo.sysobjects (NOLOCK)
+WHERE name LIKE '%art%' and (xtype = 'U' or xtype = 'V')
+order by name
+
+------------------------
+FIND COLUMN NAMES
+------------------------
+
+SELECT so.name as [TABLE NAME], sc.name as [FIELD NAME]
+FROM sysobjects so
+INNER JOIN syscolumns sc ON so.id = sc.id
+WHERE so.type = 'U' 
+AND sc.name LIKE '%packageid%'
+ORDER BY so.name, sc.name
+
+------------------------
+FIND TEXT IN STORED PROC
+------------------------
+
+SELECT
+[name], [text]
+FROM SysObjects O INNER JOIN SysComments C on O.id = C.id
+WHERE (type = 'P' OR type = 'V')
+	AND [text] Like '%pcaEvaluateCVX2%'
+ORDER BY [name]
+
+
+------------------------
+FIND DATABASE
+------------------------
+
+Select distinct SERVER_NAME from work_tables.dbo.global_objects (nolock) 
+where ARTICLE = 'cc_person_loader'
+
+
+------------------------
+FIND ERROR
+------------------------
+
+select object_name(id) from syscomments (nolock) where text like '%suspended due to failed value load.%'

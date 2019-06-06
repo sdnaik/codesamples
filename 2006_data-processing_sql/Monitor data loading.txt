@@ -1,0 +1,7 @@
+select  count(*) count,  
+1000.0 * count(*) / datediff( ms, min(si.inserted), max(si.inserted))  [Rate - TPS],
+case count(*) when 866381 then 'DONE' else
+convert( varchar, dateadd( s, 866381 / ( 1000.0 * count(*) / 
+datediff( ms, min(si.inserted), max(si.inserted))), getdate()), 120 ) end  ETA
+ from settlerecon..settlement_iso si(nolock) 
+where  si.inserted >= '2005-10-19' and messagetype = 1240

@@ -1,0 +1,1 @@
+select top 1 * from stockyard.card_management.dbo.FULFILLMENT_queue where TopClientID = 6525 and BulkID is not null

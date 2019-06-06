@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.nlg.services.promotion.bo">
+	<class name="LeadPrice" table="LeadPrice" schema="TLCS">
+		<composite-id name="id" class="com.nlg.services.promotion.bo.LeadPriceId">
+			<key-property name="leadPriceKey" type="string">
+				<column name="leadpricekey" length="4000" not-null="true"/>
+			</key-property>
+			<key-property name="groupId" type="int">
+				<column name="group_id" precision="2" not-null="true"/>
+			</key-property>
+			<key-property name="deleteStatus" type="char">
+				<column name="deleteStatus" length="1" not-null="true"/>
+			</key-property>
+		</composite-id>
+		<!-- Although the table has this column as not null, the value could be null in middle tier -->
+		<property name="leadPriceValue" type="big_decimal">
+			<column name="leadprice" precision="7" not-null="false"/>
+		</property>
+		<!-- Although the table has this column as not null, the value could be null in middle tier -->
+        <property name="userIdUpdt" type="string">
+            <column name="useridupdt" length="8" not-null="false" />
+        </property>		
+        <property name="updt" type="timestamp">
+            <column name="updt" length="30" not-null="false" />
+        </property>		       
+	</class>
+</hibernate-mapping>

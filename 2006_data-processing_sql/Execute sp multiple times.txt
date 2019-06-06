@@ -1,0 +1,8 @@
+declare @counter int
+set @counter = 1
+
+while @counter < 1000
+	begin 
+		exec pprocesswebhandleremsg
+		set @counter = @counter + 1
+	end
